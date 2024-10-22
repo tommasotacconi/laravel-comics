@@ -17,3 +17,5 @@ Route::get('/', function () {
     $bikes = config('db.bikes');
     return view('pages.home', compact('bikes'));
 });
+
+// final commit
