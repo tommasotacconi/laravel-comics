@@ -14,5 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('pages.home');
+    $bikes = config('db.bikes');
+    return view('pages.home', compact('bikes'));
 });
