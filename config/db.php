@@ -86,7 +86,7 @@ return [
             "type" => "Hydrogen Pulsebike",
             "horse_power" => 620,
             "price" => 82000,
-            "img_url" => "https://cdn.shopify.com/s/files/1/1861/9913/products/ELECTRIC-15.jpeg?v=1671095725",
+            "img_url" => "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhOuFAYRkR8QVsKEMqTV6CxtLHR_sIDLLVrjN1likQrPF6dOdS_Hw2IyePSucYpBj5NdswIN5GZL69rrcgfRaYUoUaMAuww2SzrJMmueK0uEmFRrds_lmedevP3-iBFkoyggQ9sU9_BgJjJmSkq7nWOx_VL24umAEIbZUQ_3jJFpss1Er2PTShGJS24/s1280/2022-Moto%20Sapien%20Concept%20by%20Anton%20Brousseau-1.jpg",
             "description" => "Harness the power of hydrogen with the Helix Vortex, designed for efficiency and speed while remaining environmentally friendly."
         ],
         [

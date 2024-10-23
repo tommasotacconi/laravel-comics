@@ -8,6 +8,16 @@ body {
     font-size: 3rem;
 }
 
+.card {
+  min-height: 400px;
+}
+
+.card img {
+  height: calc(400px / 5 * 2);
+  object-fit: cover;
+  object-position: center;
+}
+
 .card .card-body {
   display: flex;
   flex-direction: column;
