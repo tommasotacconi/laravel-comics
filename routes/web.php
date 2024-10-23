@@ -13,9 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Dati dal db
+
 Route::get('/', function () {
     $bikes = config('db.bikes');
     return view('pages.home', compact('bikes'));
+});
+
+// Rotte per le singole show
+Route::get('/{id}', function (string $bike_id) {
+    $bike = config('db.bikes.' . $bike_id);
+    return view('pages.show', compact('bike'));
 });
 
 // final commit
