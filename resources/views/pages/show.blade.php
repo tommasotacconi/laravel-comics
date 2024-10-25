@@ -5,12 +5,22 @@
 @section('main-content')
 
   {{-- Bikes cards --}}
-  <div class="container-md px-4">
-    <main id="id">
-      <h1>
-        {{ $bike['model_name'] }}
-      </h1>
-    </main>
-  </div>
+  <main id="{{ $bike_id }}" class="bike-show" style="background-image: url({{ $bike['img_url'] }})">
+    <div class="container-md px-4">
+      <div class="col-8 mx-auto">
+        <div class="wrapper-title-price mb-3">
+          <h1>
+            {{ $bike['model_name'] }}
+          </h1>
+          <span class="price">{{ $bike['price'] }}</span>
+        </div>
+        <section class="bike-specs">
+          <p>
+            {{ $bike['description'] }}
+          </p>
+        </section>
+      </div>
+    </div>
+  </main>
 
 @endsection
