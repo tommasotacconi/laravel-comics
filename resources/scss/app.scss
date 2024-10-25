@@ -198,11 +198,14 @@ $a-radius: 30px;
 .bike-show {
 	color: #fff;
 	padding: 20px 0 5px;
-	height: 80vh;
+	height: calc(100vh - 98px);
 	position: relative;
 
 	background-size: cover;
 	background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 	&::before {
 		content: '';
@@ -215,7 +218,6 @@ $a-radius: 30px;
 	}
 
 	.col-8 {
-		margin-top: 300px;
 		position: relative;
 		z-index: 1;
 	}
