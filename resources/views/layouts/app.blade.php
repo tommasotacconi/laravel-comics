@@ -1,3 +1,7 @@
+@php
+  $bikes = config('db.bikes');
+@endphp
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,18 +14,18 @@
     @yield('additional-cdn')
 </head>
 <body>
-    {{-- Includi header --}}
-    @include('partials.header')
+  {{-- Includi header --}}
+  @include('partials.header')
 
-    {{-- Inserisci contenuti da chi estende --}}
-    <main>
-        @yield('main-content')
-    </main>
+  {{-- Inserisci contenuti da chi estende --}}
+  <main>
+      @yield('main-content')
+  </main>
 
-    {{-- Includi footer --}}
-    @include('partials.footer')
+  {{-- Includi footer --}}
+  @include('partials.footer')
 
-    @yield('additional-script')
-    @vite('resources/js/app.js')
+  @yield('additional-script')
+  @vite('resources/js/app.js')
 </body>
 </html>
