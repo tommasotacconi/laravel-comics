@@ -1,36 +1,241 @@
 @use '~bootstrap/scss/bootstrap' as *;
+@use 'bootstrap-icons/font/bootstrap-icons.scss';
+
+
+/* Css reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Palette */
+:root {
+	--bike-cr-primary: #90f;
+	--bike-cr-secondary: #6b00b3;
+	--bike-cr-tertiary: #3d0066;
+}
+
+/* Font dimensions */
+:root {
+	--nav-fs: 3rem;
+}
+
+html {
+	min-height: 100vh;
+}
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+	background-image: linear-gradient(#fff, var(--bike-cr-secondary),var(--bike-cr-tertiary), var(--bike-cr-tertiary));
+	background-color: transparent;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+/* Header */
 .navbar .navbar-brand {
-    font-size: 3rem;
+  font-size: var(--nav-fs);
 }
 
+/* Home main content*/
 .card {
-  min-height: 400px;
-}
+  background-color: #000;
+  border-color: #000;
 
-.card img {
-  height: calc(400px / 5 * 2);
-  object-fit: cover;
-  object-position: center;
-}
-
-.card .card-body {
-  display: flex;
-  flex-direction: column;
-
-  p {
-    flex-grow: 1;
+  img {
+    height: calc(400px / 5 * 2);
+    object-fit: cover;
+    object-position: center;
   }
 
-  a {
-    align-self: flex-start;
+  .card-body {
+    color: #fff;
+    background-color: transparent;
+
+    display: flex;
+    flex-direction: column;
+
+    p {
+        flex-grow: 1;
+    }
+
+    a {
+      align-self: flex-start;
+      background-color: var(--bike-cr-secondary);
+      border-color: var(--bike-cr-secondary);
+
+      &:hover {
+          background-color: var(--bike-cr-primary);
+      }
+    }
   }
 }
 
-h1 {
-    color: #0073ff;
+
+/* Footer */
+// Footer top
+.footer-top {
+  /* Custom properties */
+  $footer-top-h: 250px;
+
+  height: $footer-top-h;
+  background-color: #000;
+
+  .container-lg {
+    height: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  section {
+    height: 100%;
+    --section-pt: 10px;
+    padding: var(--section-pt) 0;
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+
+    h3 {
+        align-self: flex-start;
+        color: #fff;
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+        line-height: 1.3rem / 2 * 3;
+      }
+
+    ul {
+      height: 100%;
+      margin-bottom: 0;
+
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      overflow: hidden;
+    }
+
+    li {
+      margin-bottom: 2px;
+      width: 150px;
+
+      a {
+        color: #ccc;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  };
+}
+// Footer bottom
+/* Custom properties */
+$base-color: var(--bike-cr-primary);
+$a-radius: 30px;
+
+.footer-bottom {
+  height: 100px;
+  color: #3a3a3a;
+  background-color: currentColor;
+
+  .container-lg {
+    height: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .sign-up-btn {
+    padding: 10px 14px;
+    color: #fff;
+    border: 3px solid $base-color;
+    background-color: transparent;
+    transition: background-color 2s;
+
+    font-family: 'Opens sans condensed', sans-serif;
+
+    &:hover {
+    background-color: $base-color;
+    border-color: #fff;
+    }
+  }
+
+  #social,
+  #social-link {
+    display: flex;
+  }
+
+  #social {
+    h3 {
+      margin-right: 20px;
+      color: $base-color;
+    }
+
+    #social-link a {
+      color: currentColor;
+      background-color: #888;
+      font-size: 1.2rem;
+      display: inline-block;
+      margin-right: 5px;
+      width: $a-radius;
+      height: $a-radius;
+      border-radius: 50%;
+      text-align: center;
+      line-height: $a-radius;
+    }
+  }
+}
+
+
+/* Bike show */
+.bike-show {
+	color: #fff;
+	padding: 20px 0 5px;
+	height: 80vh;
+	position: relative;
+
+	background-size: cover;
+	background-position: center;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background-color: #0009;
+	}
+
+	.col-8 {
+		margin-top: 300px;
+		position: relative;
+		z-index: 1;
+	}
+
+	.wrapper-title-price {
+		display: flex;
+		align-items: end;
+
+		h1 {
+			color: var(--bike-cr-primary);
+			margin: 0;
+		}
+	}
+
+	.price {
+		font-size: 1.5rem;
+		position: relative;
+		left: 20px;
+		&::after {
+			content: '.00\0024';
+		}
+	}
 }
